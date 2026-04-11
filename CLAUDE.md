@@ -77,7 +77,7 @@ All output is JSON to stdout. Errors are JSON to stderr.
 
 `--window` and `--window-id` raise the target window before executing the action, all in one process. This eliminates the focus race condition when agents chain commands.
 
-`--grid` overlays a labeled grid (default auto-scaled) on screenshots. `--cell` targets a grid cell for cropping (screenshot) or clicking (mouse move). Supports recursive zoom via dot notation: `B2.C1`. At each zoom level, small crops are scaled up to at least 640x480 before the grid is drawn, and the grid density for both screenshot cropping and mouse targeting uses these scaled dimensions so that cell labels are consistent across zoom and click.
+`--grid` overlays a labeled grid (default auto-scaled) on screenshots with red crosshairs at each cell center showing where a click would land. `--cell` crops to a grid cell for zooming (screenshot) or clicking (mouse click). Supports recursive zoom via dot notation: `B2.C1`. Zoomed screenshots include context padding (half a cell of dimmed surrounding content with parent-level grid lines and neighbor labels) so agents can orient spatially. At each zoom level, small crops are scaled up to at least 640x480 and grid density is consistent between screenshot cropping and mouse click targeting.
 
 ## Public API Contract
 
