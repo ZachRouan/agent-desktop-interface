@@ -68,9 +68,8 @@ src/
 gui-tool screenshot [--window <title>] [--window-id <id>] [--grid [WxH]] [--cell <ref>] [--output <path>]
 gui-tool windows list
 gui-tool windows raise <id>
-gui-tool mouse move <x> <y> [--window <title>] [--window-id <id>]
-gui-tool mouse move --cell <ref> [--grid WxH] --window-id <id>
-gui-tool mouse click [--button left|right] [--window <title>] [--window-id <id>]
+gui-tool mouse move <x> <y>
+gui-tool mouse click [--cell <ref>] [--grid WxH] [--button left|right] [--window <title>] [--window-id <id>]
 gui-tool key type <text> [--window <title>] [--window-id <id>]
 gui-tool key press <combo> [--window <title>] [--window-id <id>]
 ```
