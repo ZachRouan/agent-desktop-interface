@@ -68,7 +68,6 @@ src/
 gui-tool screenshot [--window <title>] [--window-id <id>] [--grid [WxH]] [--cell <ref>] [--output <path>]
 gui-tool windows list
 gui-tool windows raise <id>
-gui-tool mouse move <x> <y>
 gui-tool mouse click [--cell <ref>] [--grid WxH] [--button left|right] [--window <title>] [--window-id <id>]
 gui-tool key type <text> [--window <title>] [--window-id <id>]
 gui-tool key press <combo> [--window <title>] [--window-id <id>]
@@ -112,7 +111,7 @@ pub fn key_press(combo: &str) -> Result<String, String>
 ## Testing
 
 - `cargo build` must succeed with zero warnings on the target platform
-- `cargo test` for unit tests (90 tests: json, png, grid, validation, deflate compression, arg parsing)
+- `cargo test` for unit tests (88 tests: json, png, grid, validation, deflate compression, arg parsing)
 - `cargo test -- --ignored` for integration tests (10 tests: require running desktop session)
 - Integration tests require platform-specific setup (input group on Linux, permissions on macOS)
 
