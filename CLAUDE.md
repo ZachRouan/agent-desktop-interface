@@ -108,6 +108,10 @@ pub fn key_press(combo: &str) -> Result<String, String>
 - Window IDs are `u64` across all platforms
 - Screen coordinates for mouse are absolute pixels from top-left
 
+## Versioning
+
+Bump the version in `Cargo.toml` every time you build a release binary. This ensures agents and logs can identify which build they're running.
+
 ## Testing
 
 - `cargo build` must succeed with zero warnings on the target platform
