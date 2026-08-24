@@ -28,7 +28,7 @@ gridhand key press "ctrl+a" --window-id 123          # key combo (ctrl/shift/alt
 
 ## Grid Targeting
 
-No pixel coordinates exist. The grid is the only way to click. Each cell has a red crosshair (+) at its center — a click on that cell lands **exactly on that crosshair, nowhere else**. If the crosshair isn't on your target, the click will miss. Zoom until a crosshair sits directly on the target.
+No pixel coordinates exist. The grid is the only way to click. Each cell has a cyan crosshair (+) at its center — a click on that cell lands **exactly on that crosshair, nowhere else**. If the crosshair isn't on your target, the click will miss. Zoom until a crosshair sits directly on the target.
 
 ### Orient → Zoom → Click → Verify
 
@@ -55,7 +55,11 @@ Only take a fresh full-grid screenshot (no `--cell`) when the screen has changed
 
 ### Between-Cell Targeting
 
-Target straddles two cells? Use `+` to center on the boundary:
+When you locate a target, report **every** cell it touches, not just one — a target on a grid line is in two cells, and picking one silently biases your click toward the wrong side. Then:
+
+- **One cell:** click it normally.
+- **Two adjacent cells** (side by side or stacked): use `+` to click the shared boundary.
+- **Three or four cells** (target sits on a corner, or spans further): don't guess — zoom into one of them first.
 
 ```bash
 gridhand mouse click --cell D3+E3 --window-id 123   # horizontal

@@ -1315,9 +1315,11 @@ fn draw_filled_rect(img: &mut Image, x: u32, y: u32, w: u32, h: u32, color: [u8;
 }
 
 /// Draw a crosshair (+) at (cx, cy) with the given arm length and line thickness.
-/// Red with a black outline for visibility on any background.
+/// Cyan with a black outline for visibility on any background. Not red: red
+/// crosshairs visually merge with red UI targets (buttons, badges, error dots)
+/// and vision models then misread which cell the target is in (issue #16).
 fn draw_crosshair(img: &mut Image, cx: u32, cy: u32, arm: u32, thickness: u32) {
-    let red: [u8; 4] = [255, 40, 40, 255];
+    let fill: [u8; 4] = [40, 200, 200, 255];
     let outline: [u8; 4] = [0, 0, 0, 200];
     let half_t = thickness as i32 / 2;
     let outline_pad: i32 = 1;
@@ -1336,11 +1338,11 @@ fn draw_crosshair(img: &mut Image, cx: u32, cy: u32, arm: u32, thickness: u32) {
                 set_pixel(img, px, py as u32, outline);
             }
         }
-        // Red fill
+        // Cyan fill
         for dt in -half_t..=half_t {
             let py = cy as i32 + dt;
             if py >= 0 && (py as u32) < img.height {
-                set_pixel(img, px, py as u32, red);
+                set_pixel(img, px, py as u32, fill);
             }
         }
     }
@@ -1358,11 +1360,11 @@ fn draw_crosshair(img: &mut Image, cx: u32, cy: u32, arm: u32, thickness: u32) {
                 set_pixel(img, qx as u32, py, outline);
             }
         }
-        // Red fill
+        // Cyan fill
         for dt in -half_t..=half_t {
             let qx = cx as i32 + dt;
             if qx >= 0 && (qx as u32) < img.width {
-                set_pixel(img, qx as u32, py, red);
+                set_pixel(img, qx as u32, py, fill);
             }
         }
     }

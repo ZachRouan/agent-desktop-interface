@@ -48,7 +48,7 @@ Concrete things it's been used for:
 
 ## Features
 
-- **Grid targeting:** Overlay a labeled grid on screenshots with red crosshairs at each cell center. Click by cell label — no pixel coordinates. Supports recursive zoom (`B2.C1`) and between-cell targeting (`D3+E3`).
+- **Grid targeting:** Overlay a labeled grid on screenshots with cyan crosshairs at each cell center. Click by cell label — no pixel coordinates. Supports recursive zoom (`B2.C1`) and between-cell targeting (`D3+E3`).
 - **No accessibility tree required:** Targets purely from what's on screen — never AT-SPI, UI Automation, or the AX APIs. Works where the accessibility tree is missing, incomplete, or wrong: games, `<canvas>`/WebGL, custom-drawn UIs (Flutter, etc.), and remote desktops.
 - **Contextual zoom:** Zoomed views show the target cell with a coarser sub-grid, surrounded by dimmed context from adjacent cells with parent-level labels for spatial orientation.
 - **No dependencies:** Pure std Rust, direct FFI to OS APIs (CoreGraphics, user32.dll, D-Bus). Compiles to a single small binary.
